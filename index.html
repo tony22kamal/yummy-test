@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./main.css">
+    <title>Yummy</title>
+</head>
+<body>
+
+<nav class="min-vh-100 position-fixed top-0">
+    <div class="nav-left  text-white bg-black d-flex flex-column justify-content-between min-vh-100 p-4">
+     <div>
+        <ul class="links overflow-hidden list-unstyled">
+            <li id="search" class="py-2">Search</li>
+            <li id="category" class="py-2">Categories</li>
+            <li id="area" class="py-2">Area</li>
+            <li id="ingred" class="py-2">Ingredients</li>
+            <li id="contact" class="py-2">Contact Us</li>
+        </ul>
+     </div>
+     <div>
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-solid fa-globe"></i>
+        <p class="">Copyright Â© 2019 All Rights Reserved.</p>
+     </div>
+    </div>
+    <div class="nav-right bg-white d-flex flex-column justify-content-between text-black min-vh-100 position-absolute end-0 top-0 text-center p-2">
+        <img src="./logo (1).png" alt="logo-image">
+        <i class="fa-solid fa-bars change fa-xl"></i>
+        <div>
+        <i class="fa-solid fa-globe d-block"></i>
+        <i class="fa-solid fa-share-nodes"></i>
+        </div> 
+    </div>
+</nav>
+<main>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="py-5 d-flex flex-wrap" id="home"></div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row py-4 d-none"id="search-container" >
+            <div class="col-md-6">
+                <input onkeyup="searchByName(this.value)" type="text" class="form-control bg-transparent text-white" placeholder="Search by name">
+            </div>
+            <div class="col-md-6">
+                <input onkeyup="searchByFLetter(this.value)" type="text" maxlength="1" class="form-control bg-transparent text-white" placeholder="Search by first letter">
+
+            </div>
+            </div>
+        
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="py-5 d-none d-flex flex-wrap" id="category-container"></div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="py-5 d-none d-flex flex-wrap" id="area-container"></div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="py-5 d-none d-flex flex-wrap g-3" id="ingred-container"></div>
+        </div>
+    </div>
+</section>
+
+<section id="contact-container" class="min-vh-50 py-5 d-flex justify-content-center align-items-center d-none ">
+    <div class="container ">
+       <div class="py-5 g-4">
+           <div class="row">
+            <div class="col-lg-5 my-1">
+               <div class="input-group mb-3">
+                   <input type="text" placeholder="Enter your name" id="name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+               <div id="alertName" class="alert alert-danger rounded-2 w-100 d-none mt-2">Special characters and numbers not allowed</div> 
+               </div>
+            </div> 
+            <div class="col-lg-5 my-1">
+               <div class="input-group mb-3">
+                   <input type="text" id="mail" placeholder="Enter your email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                   <div id="alertMail" class="alert alert-danger rounded-2 w-100 d-none mt-2">Email not valid *exemple@yyy.zzz</div> 
+   
+               </div>
+            </div>  
+            <div class="col-lg-5 my-1">
+               <div class="input-group mb-3">
+                   <input type="number" id="phone" placeholder="Enter your phone" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                   <div id="alertPhone" class="alert alert-danger rounded-2 w-100 d-none mt-2">Enter valid Phone Number</div> 
+               </div>
+            </div> 
+            <div class="col-lg-5 my-1">
+               <div class="input-group mb-3">
+                   <input type="number" id="age" placeholder="Enter your age" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                   <div id="alertAge" class="alert alert-danger rounded-2 w-100 d-none mt-2">Enter valid age</div>  
+               </div>
+            </div> 
+            <div class="col-lg-5 my-1">
+               <div class="input-group mb-3">
+                   <input type="password" id="pass" placeholder="Enter your password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                   <div id="alertPass" class="alert alert-danger rounded-2 w-100 d-none mt-2">Enter valid password *Minimum eight characters, at least one letter and one number:*</div>  
+               </div>
+            </div> 
+            <div class="col-lg-5 my-1">
+               <div class="input-group mb-3">
+                   <input type="password" id="repass" placeholder="Repassword" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                   <div id="alertRepass" class="alert alert-danger rounded-2 w-100 d-none mt-2">Enter valid repassword</div>  
+               </div>
+            </div> 
+           </div>
+           <div class="col-lg-3 mt-2 m-auto">
+           <button id="con" class="btn btn-outline-danger" disabled>submit</button>
+       </div>
+       </div>
+       <p id="check" class="text-white text-center d-none">Please check your valid</p>
+   
+    </div>
+   </section>
+   <div class="loading position-absolute top-0 bottom-0 start-0 end-0 bg-black text-white justify-content-center align-items-center">
+        <i class="fa-solid fa-spinner fa-spin fa-6x"></i>
+    </div>
+
+
+   <div class="row container text-white py-5 ps-5" id="meal-data"></div>
+</main>
+    
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./jquery-3.7.1.min.js"></script>
+  <script src="./index.js"></script>
+</body>
+</html>

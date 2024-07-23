@@ -1,0 +1,57 @@
+body{
+    background-color: #0d0d0d;
+    overflow: hidden;
+}
+
+.loading{
+    z-index: 999;
+    display: flex;
+}
+nav{
+    z-index: 999;
+}
+
+nav img{
+    width: 50px;
+}
+
+nav ul li{
+    position: relative;
+    top: 300;
+}
+
+nav .fa-bars,
+nav li{
+    cursor: pointer;
+}
+.nav-left{
+    width: 80%;
+}
+ .meal figcaption{
+    top: 0px;
+    left: 15px;
+    right: 15px ;
+    bottom: 15px;
+    z-index: 1;
+    background-color: #f9f6f6ca;
+    transform: translateY(110%);
+    transition: all .5s;
+} 
+
+.meal:hover figcaption{
+    transform: translateY(0%);
+}
+
+.cate figcaption{
+    top: 0px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    z-index: 1;
+    background-color: #f9f6f6ca;
+    transform: translateY(110%);
+    transition: all .5s;
+}
+.cate:hover figcaption{
+    transform: translateY(0%);
+}
